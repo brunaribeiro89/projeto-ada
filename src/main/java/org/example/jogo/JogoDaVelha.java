@@ -7,8 +7,20 @@ public class JogoDaVelha {
         Campo[][] jogo = new Campo[3][3];
         char simboloAtual = '0';
         Boolean gameInProgress = true;
-        String votoria = "";
+        String vitoria = "";
         Scanner scan = new Scanner(System.in);
+
+        /*logica  principal do jogo*/
+        while(gameInProgress) {
+            desenhaJogo(jogo);
+            vitoria = verificaVitoriaJogo(jogo);
+            if(!vitoria.equals("")) {
+                System.out.printf("Jogador %s vencedor da partida!%n", vitoria);
+                break;
+            }
+        }
+
+
     }
     /*metodo responsável por redesenhar o tabuleiro com os novos campos*/
     public static void desenhaJogo(Campo[][] jogo){
@@ -20,4 +32,7 @@ public class JogoDaVelha {
         System.out.printf("2    %c | %c | %c %n", jogo[2][0].getSimbolo(), jogo[2][1].getSimbolo(), jogo[2][2].getSimbolo());
     }
 
+    public static String verificaVitoriaJogo(Campo[][] jogo){
+        return "";
+    }
 }
